@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Admin </title>
+      <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-cream font-body flex min-h-screen">
+<aside class="w-56 flex-shrink-0 bg-green-600 flex flex-col py-7 overflow-hidden relative">
+ 
+
+    <div class="px-5 pb-5 border-b border-white/10 flex items-center gap-3">
+
+    <div class="w-8 h-8 bg-green-700 rounded-lg flex items-center justify-center">
+      <i class="fa-solid fa-seedling text-white text-sm"></i>
+    </div>
+    <div>
+      <p class="text-white font-display font-bold text-base leading-tight">AGriTrade</p>
+      <p class="text-agri-400 text-[11px] font-light">Admin features </p>
+    </div>
+  </div>
+  <nav class="flex-1 px-3 mt-2 space-y-0.5">
+    <a href="admin.html" class="flex items-center gap-2.5 px-3 py-2.5 text-wheat text-xs font-semibold border-b border-yellow-200 border-wheat bg-white/10">🎛️ Admin Dashbord </a>
+    <a onclick="openingL()" href="#"     class="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-white/60 text-xs hover:bg-white/10 hover:text-white border-l-2 border-transparent transition-all"> <i class="  fa-solid fa-list "></i>
+Listings</a>
+    <a onclick="openingO()" href="#"  class="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-white/60 text-xs hover:bg-white/10 hover:text-white border-l-2 border-transparent transition-all">  <i class=" fa-solid fa-cart-arrow-down  "></i>  Orders</a>
+    <a onclick="openingC()" href="#"   class="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-white/60 text-xs hover:bg-white/10 hover:text-white border-l-2 border-transparent transition-all"> <i class="  fa-solid fa-layer-group "></i>Categories</a>
+    <a onclick="openingU()" href="#" id=""  class="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-white/60 text-xs hover:bg-white/10 hover:text-white border-l-2 border-transparent transition-all">  <i class="  fa-solid fa-users "></i>
+Users</a>
+    <a href="main.html"  class="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-white/60 text-xs hover:bg-white/10 hover:text-white border-l-2 border-transparent transition-all"> <i class="fa-solid fa-seedling "></i>
+ Check The website</a>
+
+    <hr class="text-gray-800">
+    <a href="#" onclick="logOpen()"  class=" absolute bottom-2  flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-red-400  text-xs hover:text-red-700  border-l-2 border-transparent transition-all">  <i class="fa-solid fa-gear"></i>logout</a>
+
+  </nav>
+</aside>
+    
+<main class="flex-1 p-7 overflow-y-auto">
+ 
+  <div class="flex items-start  mb-6 border-b">
+    <div class=" pb-8 ">
+      <h1 class="font-display text-2xl font-bold text-black">Admin Dashboard</h1>
+      <p class="text-gray-400 text-xs mt-1"> Welcome to AGriTrade </p>
+
+</div>
+  </div>
+  <div class=" bg-gray-100 rounded-sm  ">
+<div class=" p-5 flex flex-row gap-10 justify-center  ">
+<div class=" border-t-4 border-blue-500 relative rounded-md bg-gray-800 w-56 h-40 hover:scale-105 duration-100 transition-all ease-in-out"> 
+    <div class="pt-6">
+
+    <i class=" text-slate-400 fa-solid fa-list text-2xl flex justify-center"></i>
+    <h1 class=" text-3xl font-light text-white flex justify-center">Listings</h1> 
+</div>
+   <button onclick="openingL()"  class="absolute bottom-1 right-1 text-white text-sm hover:scale-90 transition-all duration-150 font-light border-b ">Manage <i class="fa-solid fa-caret-right text-gray-200"></i></button> 
+  </div>
+<div class=" relative  border-t-4 border-orange-700 rounded-md bg-gray-800  w-56 h-40 hover:scale-105 duration-100 transition-all ease-in-out"> 
+    <div class="pt-6">
+
+    <i class=" text-slate-400 fa-solid fa-users text-2xl flex justify-center "></i>
+      <h1 class=" text-3xl font-light text-white flex justify-center">Users</h1> </div>
+
+   <button onclick="openingU()" class="absolute bottom-1 right-1 text-white text-sm hover:scale-90 transition-all duration-150 font-light border-b ">Manage <i class="fa-solid fa-caret-right text-gray-200"></i></button> 
+  </div>
+
+
+<div class=" relative rounded-md bg-gray-800 border-t-4 border-yellow-400 w-56 h-40 hover:scale-105 duration-100 transition-all ease-in-out"> 
+    <div class="pt-6">
+
+    <i class=" text-slate-400 fa-solid fa-cart-arrow-down text-2xl flex justify-center "></i>  <h1 class=" text-3xl  text-white font-light flex justify-center">Orders</h1> 
+</div>
+   <button onclick="openingO()" class="absolute bottom-1 right-1 text-white text-sm hover:scale-90 transition-all duration-150 font-light border-b ">Manage <i class="fa-solid fa-caret-right text-gray-200"></i></button> 
+  </div>
+  <div class=" relative rounded-md bg-gray-800 border-t-4 border-red-600 w-56 h-40 hover:scale-105 duration-100 transition-all ease-in-out"> 
+    <div class="pt-6">
+
+    <i class=" text-slate-400 fa-solid fa-layer-group  text-2xl flex justify-center "></i>  <h1 class=" text-3xl font-light text-white flex justify-center">Categories</h1> 
+</div>
+   <button onclick="openingC()" class="absolute bottom-1 right-1 text-white text-sm hover:scale-90 transition-all duration-150 font-light border-b  ">Manage <i class="fa-solid fa-caret-right text-gray-200"></i></button> 
+  </div>
+</div></div>
+ 
+
+<!--listings-->
+
+ <div id="listings" class="p-6 ">
+
+  <div class="flex items-center gap-3 mb-4">
+    <h2 class="text-base font-semibold text-gray-900">Listing requests</h2>
+    <span class="bg-yellow-100 text-yellow-700 text-xs font-medium px-3 py-0.5 rounded-full"> count pending</span>
+  </div>
+
+  <div class="space-y-2">
+
+    <div class="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-4 py-3">
+      <div class="w-9 h-9 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0">
+    <img src="" alt=""> </div>
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-medium text-gray-900 ">product name</p>
+        <p class="text-xs text-gray-400 mt-0.5">by <span class="text-gray-500">seller name</span>  date</p>
+      </div>
+      <div class="flex gap-2 flex-shrink-0">
+        <button class="flex items-center gap-1.5 bg-green-50 text-green-700 text-xs font-medium px-3 py-1.5 rounded-lg hover:bg-green-100 transition-colors">
+          <i class="fa-solid fa-check text-[10px]"></i> Accept
+        </button>
+        <button class="flex items-center gap-1.5 bg-red-50 text-red-600 text-xs font-medium px-3 py-1.5 rounded-lg hover:bg-red-100 transition-colors">
+          <i class="fa-solid fa-xmark text-[10px]"></i> Refuse
+        </button>
+      </div>
+    </div>
+ <div class="flex items-center gap-3 bg-white border border-gray-200 rounded-xl px-4 py-3">
+      <div class="w-9 h-9 rounded-lg bg-gray-100 flex items-center justify-center flex-shrink-0">
+    <img src="" alt=""> </div>
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-medium text-gray-900 ">product name</p>
+        <p class="text-xs text-gray-400 mt-0.5">by <span class="text-gray-500">seller name</span>  date</p>
+      </div>
+      <div class="flex gap-2 flex-shrink-0">
+        <button class="flex items-center gap-1.5 bg-green-50 text-green-700 text-xs font-medium px-3 py-1.5 rounded-lg hover:bg-green-100 transition-colors">
+          <i class="fa-solid fa-check text-[10px]"></i> Accept
+        </button>
+        <button class="flex items-center gap-1.5 bg-red-50 text-red-600 text-xs font-medium px-3 py-1.5 rounded-lg hover:bg-red-100 transition-colors">
+          <i class="fa-solid fa-xmark text-[10px]"></i> Refuse
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+<div class="my-4">
+
+  <div class="flex items-center justify-between mb-4">
+    <h2 class="text-base font-semibold text-gray-900">All Listings</h2>
+    <div class="flex items-center gap-2">
+      <input type="text" placeholder="Search listings…"
+        class="h-8 w-44 rounded-lg border border-gray-200 px-3 text-xs focus:outline-none focus:ring-1 focus:ring-gray-300">
+      <select class="h-8 rounded-lg border border-gray-200 px-3 text-xs focus:outline-none">
+        <option>All status</option>
+        <option>Active</option>
+        <option>Pending</option>
+        <option>Removed</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="rounded-xl border border-gray-200 overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="bg-gray-50 border-b border-gray-200">
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">ID</th>
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Title</th>
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Date</th>
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Seller</th>
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Category</th>
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Price</th>
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Status</th>
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Comments</th>
+            
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-4 py-3 font-mono text-[10px] text-gray-400">id</td>
+            <td class="px-4 py-3 text-sm font-medium text-gray-900">product name</td>
+            <td class="px-4 py-3 text-xs text-gray-400">date</td>
+            <td class="px-4 py-3 text-xs text-gray-600">seller name</td>
+            <td class="px-4 py-3">
+              <span class="bg-blue-50 text-blue-700 text-[11px] font-medium px-2.5 py-0.5 rounded-full">category</span>
+            </td>
+            <td class="px-4 py-3 text-xs font-medium text-green-600">12,000 DA</td>
+            <td class="px-4 py-3">
+              <span class="bg-green-50 text-green-700 text-[11px] font-medium px-2.5 py-0.5 rounded-full">status</span>
+            </td>
+
+            <td class="px-4 py-3 text-xs font-medium ">count</td>
+
+            <td class="px-4 py-3">
+              <div class="flex gap-2">
+                <button onclick="Opncmt()" class="flex items-center gap-1 text-xs text-gray-600 border border-gray-200 rounded-lg px-2.5 py-1 hover:bg-gray-100 transition-colors">
+                  <i class="fa-solid fa-pen text-[9px]"></i> consult Comments
+                </button>
+                <button class="flex items-center gap-1 text-xs text-red-600 border border-red-100 rounded-lg px-2.5 py-1 hover:bg-red-50 transition-colors">
+                  <i class="fa-solid fa-trash text-[9px]"></i> Remove
+                </button>
+              </div>
+            </td>
+          </tr>
+
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-4 py-3 font-mono text-[10px] text-gray-400">id</td>
+            <td class="px-4 py-3 text-sm font-medium text-gray-900">product name</td>
+            <td class="px-4 py-3 text-xs text-gray-400">date</td>
+            <td class="px-4 py-3 text-xs text-gray-600">seller name</td>
+            <td class="px-4 py-3">
+              <span class="bg-blue-50 text-blue-700 text-[11px] font-medium px-2.5 py-0.5 rounded-full">category</span>
+            </td>
+            <td class="px-4 py-3 text-xs font-medium text-green-600">12,000 DA</td>
+            <td class="px-4 py-3">
+              <span class="bg-green-50 text-green-700 text-[11px] font-medium px-2.5 py-0.5 rounded-full">status</span>
+            </td>
+
+            <td class="px-4 py-3 text-xs font-medium ">count</td>
+
+            <td class="px-4 py-3">
+              <div class="flex gap-2">
+                <button onclick="Opncmt()"  class="flex items-center gap-1 text-xs text-gray-600 border border-gray-200 rounded-lg px-2.5 py-1 hover:bg-gray-100 transition-colors">
+                  <i class="fa-solid fa-pen text-[9px]"></i> consult Comments
+                </button>
+                <button class="flex items-center gap-1 text-xs text-red-600 border border-red-100 rounded-lg px-2.5 py-1 hover:bg-red-50 transition-colors">
+                  <i class="fa-solid fa-trash text-[9px]"></i> Remove
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+
+  </div>
+
+</div>
+ </div>
+ 
+
+<!--comment-->
+<div id="Cmt" class="hidden">
+<div class="rounded-xl border bg-black fixed inset-0 p-48 bg-opacity-40 border-gray-200 overflow-x-auto ">
+
+  <i onclick="closecmt()" class="fa-solid fa-xmark text-lg cursor-pointer text-white relative "></i>
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="bg-gray-50 border-b border-gray-200">
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">user</th>
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Comment</th>
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          <tr class= "bg-white hover:bg-gray-50 transition-colors">
+            <td class="px-4 py-3 font-mono text-[10px] text-gray-400">user </td>
+            <td class="px-4 py-3 text-sm font-medium text-gray-900">comment</td>
+           
+           
+
+            
+
+            <td class="px-4 py-3">
+              <div class="flex gap-2">
+                <button class="flex items-center gap-1 text-xs text-gray-600 border border-gray-200 rounded-lg px-2.5 py-1 hover:bg-gray-100 transition-colors">
+                suspend user 
+                </button>
+                <button class="flex items-center gap-1 text-xs text-red-600 border border-red-100 rounded-lg px-2.5 py-1 hover:bg-red-50 transition-colors">
+                  <i class="fa-solid fa-trash text-[9px]"></i> Remove
+                </button>
+              </div>
+            </td>
+          </tr>
+        </tbody></table>
+    </div></div></div>
+
+<!--user-->
+
+ <div id="User" class="p-6 hidden">
+
+<div class="my-4">
+
+  <div class="flex items-center justify-between mb-4">
+    <h2 class="text-base font-semibold text-gray-900">All Users</h2>
+    <div class="flex items-center gap-2">
+      <input type="text" placeholder="Search User"
+        class="h-8 w-44 rounded-lg border border-gray-200 px-3 text-xs focus:outline-none focus:ring-1 focus:ring-gray-300">
+      <select class="h-8 rounded-lg border border-gray-200 px-3 text-xs focus:outline-none">
+        <option>All Users</option>
+        <option>Active</option>
+        <option>Suspend</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="rounded-xl border border-gray-200 overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="bg-gray-50 border-b border-gray-200">
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">user</th>
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Email</th>
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">listings</th>
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Status</th>
+            
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-4 py-3 font-mono text-[10px] text-gray-400">user</td>
+            <td class="px-4 py-3 text-sm font-medium text-gray-900">email</td>
+            <td class="px-4 py-3 text-xs text-gray-400">count</td>
+           <td>
+              <span class="bg-green-50 text-green-700 text-[11px] font-medium px-2.5 py-0.5 rounded-full">status</span>
+            </td>
+
+
+            <td class="px-4 py-3">
+              <div class="flex gap-2">
+                <button class="flex items-center gap-1 text-xs text-gray-600 border border-gray-200 rounded-lg px-2.5 py-1 hover:bg-gray-100 transition-colors">
+                  consult user's listings 
+                </button>
+                <button class="flex items-center gap-1 text-xs text-red-600 border border-red-100 rounded-lg px-2.5 py-1 hover:bg-red-50 transition-colors">
+                  <i class="fa-solid fa-trash text-[9px]"></i> Ban
+                </button>
+              </div>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    
+
+  </div>
+
+</div>
+ </div>
+
+<!--Category-->
+
+
+ <div id="catego" class="p-6 hidden">
+
+<div class="my-4">
+
+<div class="flex items-center justify-between mb-4">
+    <h2 class="text-base font-semibold text-gray-900">Categories</h2>
+    <div class="flex items-center ">
+      <button class="flex items-center gap-1 text-xs  border border-green-300 rounded-lg bg-green-300 px-2.5 py-1 hover:bg-green-400 transition-colors">
+                + New Category                </button></div>
+    </div>
+  
+
+  
+
+<div class="rounded-xl border border-gray-200 overflow-hidden  ">
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse relative">
+        <thead>
+          <tr class="bg-gray-50 border-b border-gray-200">
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Category</th>
+            
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-4 py-3 font-mono text-[10px] text-gray-400">:::: </td>
+           
+
+              <td class="px-4 py-3 absolute  ">
+              <div class="flex gap-2">
+                <button class="flex items-center gap-1 text-xs text-gray-600 border border-gray-200 rounded-lg px-2.5 py-1 hover:bg-gray-100 transition-colors">
+                Edit name 
+                </button>
+                <button class="flex items-center gap-1 text-xs text-red-600 border border-red-100 rounded-lg px-2.5 py-1 hover:bg-red-50 transition-colors">
+                  <i class="fa-solid fa-trash text-[9px]"></i> Remove
+                </button>
+              </div>
+            </td>
+          </tr>
+          
+        </tbody></table>
+    </div></div>
+</div></div>
+
+
+<!--orders-->
+
+
+<div id="order" class="p-6 hidden">
+
+
+<div class="my-4">
+
+  <div class="flex items-center justify-between mb-4 gap-2">
+    <h2 class="text-base font-semibold text-gray-900">All Orders <span class="bg-yellow-100 text-yellow-700 text-xs font-medium px-3 py-0.5 rounded-full"> count </span></h2> 
+
+    <div class="flex items-center gap-2">
+      <input type="text" placeholder="Search order"
+        class="h-8 w-44 rounded-lg border border-gray-200 px-3 text-xs focus:outline-none focus:ring-1 focus:ring-gray-300">
+      <select class="h-8 rounded-lg border border-gray-200 px-3 text-xs focus:outline-none">
+        <option>All status</option>
+        <option>delivred</option>
+        <option>Pending</option>
+        <option>processing</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="rounded-xl border border-gray-200 overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="bg-gray-50 border-b border-gray-200">
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">ID</th>
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">buyer</th>
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Seller</th>
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">product(s)</th>
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Payment</th>
+           <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Delivery  </th>
+
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Amount</th>
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Status</th>
+            
+            <th class="px-4 py-2.5 text-left text-[10px] uppercase tracking-wide text-gray-400 font-medium">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-4 py-3 font-mono text-[10px] text-gray-400">id</td>
+            <td class="px-4 py-3 text-sm font-medium text-gray-900">user</td>
+            <td class="px-4 py-3 text-xs text-gray-400">user</td>
+            <td class="px-4 py-3 text-xs text-gray-600">product </td>
+            <td class="px-4 py-3">
+              <span class="bg-blue-50 text-blue-700 text-[11px] font-medium px-2.5 py-0.5 rounded-full">Status</span>
+            </td>
+            <td>
+            <span class="bg-green-50 text-green-700 text-[11px] font-medium px-2.5 py-0.5 rounded-full">Status</span>
+</td>
+            <td class="px-4 py-3 text-xs font-medium text-green-600">12,000 DA</td>
+            <td class="px-4 py-3">
+                          <span class="bg-green-50 text-green-700 text-[11px] font-medium px-2.5 py-0.5 rounded-full">status</span>
+
+            </td>
+
+            <td class="px-4 py-3">
+              <div class="flex gap-2">
+             
+                </button>
+                <button class="flex items-center gap-1 text-xs text-red-600 border border-red-100 rounded-lg px-2.5 py-1 hover:bg-red-50 transition-colors">
+                  <i class="fa-solid fa-trash text-[9px]"></i> Remove
+                </button>
+              </div>
+            </td>
+          </tr>
+
+      
+        </tbody>
+      </table>
+    </div>
+
+    
+
+  </div>
+
+</div>
+ </div>
+ 
+
+ <!--logout-->
+
+<div id="logout" class="hidden">
+ <div class="fixed inset-0 bg-black bg-opacity-45 flex items-center justify-center" >
+    <div class="bg-white rounded-2xl border border-gray-200 p-7 w-80 text-center shadow-sm">
+ 
+      <div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center mx-auto mb-4">
+        <i class="fa-solid fa-arrow-right-from-bracket text-red-600"></i>
+      </div>
+ 
+      <h3 class="text-[15px] font-medium text-gray-900 mb-2">Log out?</h3>
+      <p class="text-[13px] text-gray-500 leading-relaxed mb-6">
+        You'll be signed out of your account and redirected to the login page.
+      </p>
+ 
+      <div class="flex gap-2">
+        <button onclick="logclose()" class="flex-1 h-9 text-[13px] rounded-lg border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 transition-colors "
+        >
+          Cancel
+        </button>
+        <button class="flex-1 h-9 text-[13px] rounded-lg bg-red-500 hover:bg-red-600 text-white border-0 transition-colors "
+        >
+          Log out
+        </button>
+      </div>
+ 
+    </div>
+  </div>
+  </div>
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>
