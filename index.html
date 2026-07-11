@@ -17,14 +17,12 @@
 <div class="font-bold  text-2xl font-sans serif  ">   AGriTrade
 <i class="fa-solid fa-seedling text"></i>
 </div>
-        
+    
 
             <ul class=" flex space-x-4 m-1 pr-2 "> 
-            <li class="hover:font-medium hover:scale-95 hover:underline transition-all"><a href="#">Home</a></li>
-            <li class="hover:font-medium hover:scale-95 hover:underline transition-all"><a href="#">Categories</a></li>
-            <li class="hover:font-medium hover:scale-95 hover:underline transition-all"><a href="">About Us</a></li>
+            <li class="hover:font-medium hover:scale-95 hover:underline transition-all cursor-pointer"><a onclick="goToCategory('us') ">About Us</a></li>
     
-    <button class="bg-gray-500 border-spacing-8 rounded px-3 hover:bg-gray-400"> Login </button>
+    <button   class="bg-gray-500 border-spacing-8 rounded px-3 hover:bg-gray-400"> Login </button>
     <button class="bg-green-600 border-spacing-8 rounded px-3 hover:bg-green-500 text-slate-200 font-medium" > Sign in </button>
         </div>
             
@@ -35,7 +33,7 @@
 
 <h1> AGRITRADE <br><span class="" > Your Direct Bridge from <span class="font-semibold">Farm</span> to <span class="font-semibold">Market</span>.  </span><br> <span class=" text-base">The all-in-one platform to buy, sell,and trade agricultural products with confidence and transparency</span> <br>
 
-<button class=" text-white  text-lg  bg-green-600 border-spacing-8 rounded-xl px-6 hover:bg-green-500  transition-all duration-200 "> Get started   <i class="fa-solid fa-right-long px-1"></i> </button>
+<button onclick="continueAsGuest()" class=" text-white  text-lg  bg-green-600 border-spacing-8 rounded-xl px-6 hover:bg-green-500  transition-all duration-200 "> Get started   <i class="fa-solid fa-right-long px-1"></i> </button>
 </h1>
   
 </div>
@@ -66,7 +64,6 @@
 <footer class= " bg-green-900 backdrop-blur-sm flex-col h-22 font-normal p-4  ">
 <hr>
 
-<div //here_iwanna_add_the_bg-to-look-bold-and-to-make-the-borderline-to-look-blurry>
 
 
 <div class="   text-left "><span class="text-white ">AGriTrade🌿</span><br>
@@ -86,9 +83,10 @@ Your Direct Bridge from Farm to Market <br>
 <li><i class="fa-brands fa-whatsapp hover:scale-125  hover:text-green-400 last:transition-all duration-500"></i></li>
 </ul>
 </div> 
-</div>
     </footer>
 
+
+    <script src="main.js"></script>
 </body>
 </html>
 

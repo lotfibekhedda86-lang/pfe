@@ -1,7 +1,15 @@
 #cart {
-    display:none ;
+    display: none;
 }
 
 #cart.active {
+    display: block;
+}
+
+#prof {
+    display: none;
+}
+
+#prof.active {
     display: block;
 }

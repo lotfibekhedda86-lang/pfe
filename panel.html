@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle panel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-cream font-body flex min-h-screen">
+ 
+
+<aside class="w-56 flex-shrink-0 bg-green-600 flex flex-col py-7 overflow-hidden relative">
+ 
+
+    <div class="px-5 pb-5 border-b border-white/10 flex items-center gap-3">
+
+    <div class="w-8 h-8 bg-green-700 rounded-lg flex items-center justify-center">
+      <i class="fa-solid fa-seedling text-white text-sm"></i>
+    </div>
+    <div>
+      <p class="text-white font-display font-bold text-base leading-tight">AGriTrade</p>
+      <p class="text-agri-400 text-[11px] font-light">check Your features </p>
+    </div>
+  </div>
+  <nav class="flex-1 px-3 mt-2 space-y-0.5">
+    <a href="panel.html" class="flex items-center gap-2.5 px-3 py-2.5 text-wheat text-xs font-semibold border-b border-yellow-200 border-wheat bg-white/10">🎛️ My control Panel</a>
+    <a href="#" id onclick="showpub()" class="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-white/60 text-xs hover:bg-white/10 hover:text-white border-l-2 border-transparent transition-all">📋 My Publications</a>
+    <a href="#" id="" onclick="show()" class="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-white/60 text-xs hover:bg-white/10 hover:text-white border-l-2 border-transparent transition-all">📦 My orders</a>
+    <a href="main.html" class="flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-white/60 text-xs hover:bg-white/10 hover:text-white border-l-2 border-transparent transition-all"> 🏠 Home</a>
+  </nav>
+</aside>
+<main class="flex-1 p-7 overflow-y-auto">
+ 
+  <div class="flex items-start justify-between mb-6 border-b">
+    <div class=" pb-8 ">
+      <h1 class="font-display text-2xl font-bold text-black">My control Panel</h1>
+      <p class="text-gray-400 text-xs mt-1">Manage your products and track your orders</p>
+
+    </div>
+    <button  class="bg-green-600 hover:bg-green-500 text-white text-xs font-semibold px-4 py-2.5 rounded-lg flex items-center gap-2 transition-all hover:-translate-y-0.5">
+      ＋ New Publication
+    </button>
+  </div>
+ <div class="grid grid-cols-4 gap-3 mb-6">
+    <div class="bg-white rounded-xl p-4 border-l-4 border-blue-400 shadow-sm">
+      <p class="text-sm uppercase tracking-wider text-gray-400 font-semibold mb-1">Publications</p>
+      <p class="text-2xl font-bold text-agri-900">number</p>
+    </div>
+    <div class="bg-white rounded-xl p-4 border-l-4 border-red-500 shadow-sm">
+      <p class="text-sm uppercase tracking-wider text-gray-400 font-semibold mb-1">orders</p>
+      <p class="text-2xl font-bold text-agri-900">number</p>
+      <p class="text-amber-500 text-[11px] mt-1">status</p>
+    </div>
+
+    <div class="bg-white rounded-xl p-4 border-l-4 border-amber-600 shadow-sm">
+      <p class="text-sm uppercase tracking-wider text-gray-400 font-semibold mb-1">Note</p>
+      <p class="text-2xl font-bold text-agri-900">rating by stars</p>
+      <p class="text-gray-400 text-[11px] mt-1">client number who already gave a review</p>
+    </div>
+  </div>
+<div class="flex gap-6 border-b border-gray-200 mb-5">
+    <button id="tab-pub-btn" onclick="showpub()" class="text-sm font-semibold pb-2.5 border-b-2 border-yellow-300 text-green-900 -mb-px transition-all">📋 My Publications</button>
+    <button id="tab-ord-btn"  onclick="show()" class="text-sm font-medium pb-2.5 border-b-2  border-yellow-300  text-green-900 -mb-px  transition-all">📦 My orders</button>
+  </div>
+
+ <div id="pub" class="flex flex-col gap-4 ">
+ 
+    
+    <div class="bg-white rounded-xl px-5 py-4 flex items-center gap-4 shadow-sm border border-agri-600/10 hover:shadow-md transition-shadow">
+      <div class="w-11 h-11 rounded-full bg-agri-50 flex items-center justify-center text-2xl flex-shrink-0"><img src="" alt=""></div>
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-sm font-semibold text-gray-900">product name</span>
+          <span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full">status</span>
+        </div>
+        <p class="text-xs text-gray-400 mt-0.5">categorie</p>
+
+        <p class="text-xs font-semibold text-green-700 mt-1">price  </p>
+                <p class="text-xs font-semibold text-black mt-1">qte  </p>
+
+      </div>
+      <div class="flex gap-2 flex-shrink-0">
+        <button onclick="openedit('edit')"   class="border border-green-300 text-gray-800 bg-slate-200 hover:bg-gray-400 hover:border-transparent text-xs font-semibold px-3 py-1.5 rounded-lg transition-all"> Edit</button>
+        <button class="border border-red-300 text-red-400 hover:bg-red-50 text-sm px-2.5 py-1.5 rounded-lg transition-all"> <i class="fa-regular fa-trash-can"></i></button>
+      </div>
+    </div>
+
+ <div class="bg-white rounded-xl px-5 py-4 flex items-center gap-4 shadow-sm border border-agri-600/10 hover:shadow-md transition-shadow">
+      <div class="w-11 h-11 rounded-full bg-agri-50 flex items-center justify-center text-2xl flex-shrink-0"><img src="" alt=""></div>
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-sm font-semibold text-gray-900">product name</span>
+          <span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full">status</span>
+        </div>
+        <p class="text-xs text-gray-400 mt-0.5">categorie</p>
+
+        <p class="text-xs font-semibold text-green-700 mt-1">price  </p>
+                <p class="text-xs font-semibold text-black mt-1">qte  </p>
+
+      </div>
+      <div class="flex gap-2 flex-shrink-0">
+        <button onclick="openedit('edit')"  class="border border-green-300 text-gray-800 bg-slate-200 hover:bg-gray-400 hover:border-transparent text-xs font-semibold px-3 py-1.5 rounded-lg transition-all"> Edit</button>
+        <button class="border border-red-300 text-red-400 hover:bg-red-50 text-sm px-2.5 py-1.5 rounded-lg transition-all"> <i class="fa-regular fa-trash-can"></i></button>
+      </div>
+    </div>
+
+ <div class="bg-white rounded-xl px-5 py-4 flex items-center gap-4 shadow-sm border border-agri-600/10 hover:shadow-md transition-shadow">
+      <div class="w-11 h-11 rounded-full bg-agri-50 flex items-center justify-center text-2xl flex-shrink-0"><img src="" alt=""></div>
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-sm font-semibold text-gray-900">product name</span>
+          <span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full">status</span>
+        </div>
+        <p class="text-xs text-gray-400 mt-0.5">categorie</p>
+
+        <p class="text-xs font-semibold text-green-700 mt-1">price  </p>
+                <p class="text-xs font-semibold text-black mt-1">qte  </p>
+
+      </div>
+      <div class="flex gap-2 flex-shrink-0">
+        <button  onclick="openedit('edit')"  class="border border-green-300 text-gray-800 bg-slate-200 hover:bg-gray-400 hover:border-transparent text-xs font-semibold px-3 py-1.5 rounded-lg transition-all"> Edit</button>
+        <button class="border border-red-300 text-red-400 hover:bg-red-50 text-sm px-2.5 py-1.5 rounded-lg transition-all"> <i class="fa-regular fa-trash-can"></i></button>
+      </div>
+    </div>
+</div>
+<section id="ord" class="p-8 hidden">
+      
+      <div class="flex gap-2 mb-5">
+      <button class="bg-green-500 text-white text-[11px] font-semibold px-3 py-1.5 rounded-full">All (count)</button>
+      <button class="bg-white border border-gray-200 text-gray-500 text-[11px] font-medium px-3 py-1.5 rounded-full hover:border-agri-600 hover:text-green-700 transition-all">pending </button>
+      <button class="bg-white border border-gray-200 text-gray-500 text-[11px] font-medium px-3 py-1.5 rounded-full hover:border-agri-600 hover:text-green-700 transition-all">processing </button>
+      <button class="bg-white border border-gray-200 text-gray-500 text-[11px] font-medium px-3 py-1.5 rounded-full hover:border-agri-600 hover:text-green-700 transition-all">delivred </button>
+      <button class="bg-white border border-gray-200 text-gray-500 text-[11px] font-medium px-3 py-1.5 rounded-full hover:border-agri-600 hover:text-green-700 transition-all">canceled </button>
+    </div>
+    <div class="bg-white rounded-2xl shadow-sm border border-green-200 overflow-hidden">
+      <table class="w-full text-sm">
+        <thead class="bg-green-100 border-b border-gray-500">
+          <tr>
+            <th class="px-5 py-3.5 text-left text-[10px] font-bold uppercase tracking-wider text-agri-700">ID</th>
+            <th class="px-5 py-3.5 text-left text-[10px] font-bold uppercase tracking-wider text-agri-700">product</th>
+            <th class="px-5 py-3.5 text-left text-[10px] font-bold uppercase tracking-wider text-agri-700">seller</th>
+            <th class="px-5 py-3.5 text-left text-[10px] font-bold uppercase tracking-wider text-agri-700">Quantity</th>
+            <th class="px-5 py-3.5 text-left text-[10px] font-bold uppercase tracking-wider text-agri-700">total</th>
+            <th class="px-5 py-3.5 text-left text-[10px] font-bold uppercase tracking-wider text-agri-700">Date</th>
+            <th class="px-5 py-3.5 text-left text-[10px] font-bold uppercase tracking-wider text-agri-700">Status</th>
+            <th class="px-5 py-3.5 text-left text-[10px] font-bold uppercase tracking-wider text-agri-700">Action</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-yellow-100">
+          <tr class="hover:bg-green-50 transition-colors">
+            <td class="px-5 py-4 text-gray-400 text-[11px] font-mono">commande id</td>
+            <td class="px-5 py-4"><div class="flex items-center gap-2"><span class="text-lg "><img class="rounded-md" src="" alt=" img"></span><div><p class="font-semibold text-gray-800 text-xs">product name</p><p class="text-[10px] text-gray-400">categorie</p></div></div></td>
+            <td class="px-5 py-4 text-gray-600 text-xs font-medium">seller name</td>
+            <td class="px-5 py-4 text-gray-700 text-xs">qte</td>
+            <td class="px-5 py-4 font-bold text-black text-xs">price</td>
+            <td class="px-5 py-4 text-gray-400 text-xs">date</td>
+            <td class="px-5 py-4"><span class="bg-blue-100 text-blue-700 text-[10px] font-bold px-2.5 py-1 rounded-full">status</span></td>
+            
+            <td class="px-5 py-4"><div class="flex gap-1.5">
+              <button  class="border border-green-600 text-green-700 hover:bg-green-500  text-[11px] font-semibold px-2.5 py-1 rounded-lg transition-all">see</button>
+            <button onclick="openedit('editorder')" class="  edit-btn border border-gray-200 text-black hover:bg-gray-200 text-[11px] px-2.5 py-1 rounded-lg transition-all"> edit ✏️</button></div></td>
+          </tr>
+          <tr class="hover:bg-green-50 transition-colors">
+            <td class="px-5 py-4 text-gray-400 text-[11px] font-mono">commande id</td>
+            <td class="px-5 py-4"><div class="flex items-center gap-2"><span class="text-lg "><img class="rounded-md" src="" alt=" img"></span><div><p class="font-semibold text-gray-800 text-xs">product name</p><p class="text-[10px] text-gray-400">categorie</p></div></div></td>
+            <td class="px-5 py-4 text-gray-600 text-xs font-medium">seller name</td>
+            <td class="px-5 py-4 text-gray-700 text-xs">qte</td>
+            <td class="px-5 py-4 font-bold text-black text-xs">price</td>
+            <td class="px-5 py-4 text-gray-400 text-xs">date</td>
+            <td class="px-5 py-4"><span class="bg-blue-100 text-blue-700 text-[10px] font-bold px-2.5 py-1 rounded-full">status</span></td>
+            
+            <td class="px-5 py-4"><div class="flex gap-1.5">
+              <button  class="border border-green-600 text-green-700 hover:bg-green-500  text-[11px] font-semibold px-2.5 py-1 rounded-lg transition-all">see</button>
+            <button onclick="openedit('editorder')" class="  edit-btn border border-gray-200 text-black hover:bg-gray-200 text-[11px] px-2.5 py-1 rounded-lg transition-all"> edit ✏️</button></div></td>
+          </tr>
+         <tr class="hover:bg-green-50 transition-colors">
+            <td class="px-5 py-4 text-gray-400 text-[11px] font-mono">commande id</td>
+            <td class="px-5 py-4"><div class="flex items-center gap-2"><span class="text-lg "><img class="rounded-md" src="" alt=" img"></span><div><p class="font-semibold text-gray-800 text-xs">product name</p><p class="text-[10px] text-gray-400">categorie</p></div></div></td>
+            <td class="px-5 py-4 text-gray-600 text-xs font-medium">seller name</td>
+            <td class="px-5 py-4 text-gray-700 text-xs">qte</td>
+            <td class="px-5 py-4 font-bold text-black text-xs">price</td>
+            <td class="px-5 py-4 text-gray-400 text-xs">date</td>
+            <td class="px-5 py-4"><span class="bg-blue-100 text-blue-700 text-[10px] font-bold px-2.5 py-1 rounded-full">status</span></td>
+            
+            <td class="px-5 py-4"><div class="flex gap-1.5">
+              <button  class="border border-green-600 text-green-700 hover:bg-green-500  text-[11px] font-semibold px-2.5 py-1 rounded-lg transition-all">see</button>
+            <button onclick="openedit('editorder')" class="  edit-btn border border-gray-200 text-black hover:bg-gray-200 text-[11px] px-2.5 py-1 rounded-lg transition-all"> edit ✏️</button></div></td>
+          </tr>
+          <tr class="hover:bg-green-50 transition-colors">
+            <td class="px-5 py-4 text-gray-400 text-[11px] font-mono">commande id</td>
+            <td class="px-5 py-4"><div class="flex items-center gap-2"><span class="text-lg "><img class="rounded-md" src="" alt=" img"></span><div><p class="font-semibold text-gray-800 text-xs">product name</p><p class="text-[10px] text-gray-400">categorie</p></div></div></td>
+            <td class="px-5 py-4 text-gray-600 text-xs font-medium">seller name</td>
+            <td class="px-5 py-4 text-gray-700 text-xs">qte</td>
+            <td class="px-5 py-4 font-bold text-black text-xs">price</td>
+            <td class="px-5 py-4 text-gray-400 text-xs">date</td>
+            <td class="px-5 py-4"><span class="bg-blue-100 text-blue-700 text-[10px] font-bold px-2.5 py-1 rounded-full">status</span></td>
+            
+            <td class="px-5 py-4"><div class="flex gap-1.5">
+              <button  class="border border-green-600 text-green-700 hover:bg-green-500  text-[11px] font-semibold px-2.5 py-1 rounded-lg transition-all">see</button>
+            <button onclick="openedit('editorder')" class="  edit-btn border border-gray-200 text-black hover:bg-gray-200 text-[11px] px-2.5 py-1 rounded-lg transition-all"> edit ✏️</button></div></td>
+          </tr>
+          <tr class="hover:bg-green-50 transition-colors">
+            <td class="px-5 py-4 text-gray-400 text-[11px] font-mono">commande id</td>
+            <td class="px-5 py-4"><div class="flex items-center gap-2"><span class="text-lg "><img class="rounded-md" src="" alt=" img"></span><div><p class="font-semibold text-gray-800 text-xs">product name</p><p class="text-[10px] text-gray-400">categorie</p></div></div></td>
+            <td class="px-5 py-4 text-gray-600 text-xs font-medium">seller name</td>
+            <td class="px-5 py-4 text-gray-700 text-xs">qte</td>
+            <td class="px-5 py-4 font-bold text-black text-xs">price</td>
+            <td class="px-5 py-4 text-gray-400 text-xs">date</td>
+            <td class="px-5 py-4"><span class="bg-blue-100 text-blue-700 text-[10px] font-bold px-2.5 py-1 rounded-full">status</span></td>
+
+            <td class="px-5 py-4"><div class="flex gap-1.5">
+              <button  class="border border-green-600 text-green-700 hover:bg-green-500  text-[11px] font-semibold px-2.5 py-1 rounded-lg transition-all">see</button>
+            <button onclick="openedit('editorder')" class="  edit-btn border border-gray-200 text-black hover:bg-gray-200 text-[11px] px-2.5 py-1 rounded-lg transition-all"> edit ✏️</button></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+
+ 
+<div id="edit" class="hidden" >
+<div  class=" fixed inset-0  flex items-center justify-center bg-black bg-opacity-50 p-8 " >
+  <div class="bg-white w-full max-w-md rounded-2xl p-6 shadow-lg">
+
+    <div class="flex items-center justify-between mb-5">
+      <h2 class="text-lg font-bold">Edit Product</h2>
+      <button onclick="closeit('edit')" class="text-gray-400 hover:text-black">✕</button>
+    </div>
+
+    <div class="mb-4">
+      <label class="text-xs font-semibold text-gray-500 block mb-2">
+        Product Image
+      </label>
+
+      <div onclick="document.getElementById('img-input').click()"
+           class="h-32 border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center cursor-pointer hover:border-green-500">
+
+        <img id="preview-img"
+             src=""
+             class="hidden w-full h-full object-cover rounded-xl"/>
+
+        <div id="placeholder" class="text-center text-gray-400">
+          <p class="text-2xl">🖼️</p>
+          <p class="text-xs">Upload Images</p>
+        </div>
+      </div>
+
+      <input id="img-input" type="file" class="hidden">
+    </div>
+
+    <div class="space-y-4">
+
+      <div>
+        <label class="text-xs font-semibold text-gray-500 block mb-1">
+          Name
+        </label>
+        <input id="e-name" type="text"
+               class="w-full border rounded-xl px-3 py-2 text-sm outline-none focus:border-green-500">
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+
+        <div>
+          <label class="text-xs font-semibold text-gray-500 block mb-1">
+            Category
+          </label>
+
+          <select id="e-cat"
+                  class="w-full border rounded-xl px-3 py-2 text-sm outline-none focus:border-green-500">
+            <option>Fruits & vegetables</option>
+            <option>Seeds</option>
+            <option>Equipment</option>
+            <option>Grains</option>
+            <option>livesock</option>
+            <option>honey & Natural products</option>
+
+          </select>
+        </div>
+
+        <div>
+          <label class="text-xs font-semibold text-gray-500  mb-1">
+            Price
+          </label>
+
+          <input id="e-price" type="number"
+                 class="w-full border rounded-xl px-3 py-2 text-sm outline-none focus:border-green-500">
+        </div>
+
+      </div>
+
+      <div>
+        <label class="text-xs font-semibold text-gray-500  mb-1">
+          Stock
+        </label>
+
+        <input id="e-stock" type="number"
+               class="w-full border rounded-xl px-3 py-2 text-sm outline-none focus:border-green-500">
+      </div>
+
+    </div>
+
+    <div class="flex justify-end gap-2 mt-6">
+      <button onclick="closeit('edit')" 
+              class="px-4 py-2 text-sm border rounded-xl hover:bg-gray-100">
+        Cancel
+      </button>
+
+      <button onclick="saveProduct(this)"
+              class="px-4 py-2 text-sm bg-green-600 text-white rounded-xl hover:bg-green-700">
+        Save
+      </button>
+    </div>
+
+  </div>
+</div>
+</div>
+ <div id="editorder" class="hidden">
+ <div class="bg-black fixed inset-0 bg-opacity-65  flex items-center justify-center pt-2 overflow-x-auto">
+<div class="w-full max-w-lg max-h-full pb-8">
+ 
+  <div class="mb-5 p-4  bg-white rounded-xl">
+    <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1">My Orders</p>
+    <h1 class="text-2xl font-bold text-gray-900">Edit Order</h1>
+    <p class="text-xs text-gray-400 mt-1">You can edit delivery info and notes before shipment.</p>
+  </div>
+ 
+  <div class="bg-white border border-gray-200 rounded-2xl px-5 py-3 mb-4 flex items-center gap-3 shadow-sm">
+    <div class="w-7 h-7 rounded-lg bg-green-50 flex items-center justify-center flex-shrink-0">
+      
+    </div>
+    <div class="flex-1 min-w-0">
+      <p class="text-[10px] font-semibold text-gray-400 uppercase tracking-wider mb-0.5">Order ID</p>
+      <p class="mono text-xs text-gray-700 truncate">order id </p>
+    </div>
+    <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-blue-50 text-blue-600">status</span>
+  </div>
+ 
+  <div class="bg-white border border-gray-200 rounded-2xl shadow-sm divide-y divide-gray-100">
+ 
+    <div class="p-5">
+      <label class="block text-[11px] font-semibold text-gray-400 uppercase tracking-widest mb-2">
+      product Name  (Not Editable)    </label>
+      <input type="text" disabled
+        placeholder=" product name "
+        class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:border-green-500 focus:ring-2 focus:ring-green-100 transition-all placeholder-gray-300"/>
+    </div>
+ 
+    <div class="p-5">
+      <div class="flex items-center justify-between mb-2">
+        <label class="text-[11px] font-semibold text-gray-400 uppercase tracking-widest">Quantity</label>
+        <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-green-50 text-green-700">(Editable)</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <button onclick="changeQty(-1)"
+          class="w-9 h-9 rounded-xl bg-red-50 border border-red-100 text-red-500 text-xl font-semibold flex items-center justify-center hover:bg-red-100 transition-colors flex-shrink-0">−</button>
+        <input id="qty" type="number"  min="1" max="50"
+          class="flex-1 border border-gray-200 rounded-xl px-4 py-2.5 text-sm font-bold text-center text-gray-800 bg-white focus:border-green-500 focus:ring-2 focus:ring-green-100 transition-all"/>
+        <button onclick="changeQty(1)"
+          class="w-9 h-9 rounded-xl bg-green-50 border border-green-100 text-green-600 text-xl font-semibold flex items-center justify-center hover:bg-green-100 transition-colors flex-shrink-0">+</button>
+      </div>
+    </div>
+ 
+    <div class="p-5">
+      <label class="block text-[11px] font-semibold text-gray-400 uppercase tracking-widest mb-2">
+        Delivery Address
+      </label>
+      <input type="text" 
+        placeholder="Enter your New delivery address"
+        class="w-full border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:border-green-500 focus:ring-2 focus:ring-green-100 transition-all placeholder-gray-300"/>
+    </div>
+ 
+    <div class="p-5">
+      <label class="block text-[11px] font-semibold text-gray-400 uppercase tracking-widest mb-2">
+        Phone Number
+      </label>
+      <div class="flex items-center border border-gray-200 rounded-xl focus-within:border-green-500 focus-within:ring-2 focus-within:ring-green-100 transition-all overflow-hidden">
+        <span class="mono px-4 py-2.5 text-sm text-gray-400 bg-gray-50 border-r border-gray-200 select-none">+213</span>
+        <input type="tel"  placeholder="0X XX XX XX XX"
+          class="flex-1 px-4 py-2.5 text-sm text-gray-800 bg-white placeholder-gray-300"/>
+      </div>
+    </div>
+ 
+    <div class="p-5">
+      <label class="block text-[11px] font-semibold text-gray-400 uppercase tracking-widest mb-3">
+        select a New Delivery Method
+      </label>
+      <div class="space-y-2" id="delivery-methods">
+ 
+        <div  class="method-card selected flex items-center gap-3 border-2 border-green-500 bg-green-50 rounded-xl p-3.5 cursor-pointer transition-all">
+          <div class="radio w-4 h-4 rounded-full border-2 border-green-500 bg-green-500 flex items-center justify-center flex-shrink-0">
+            <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
+          </div>
+          <div class="w-9 h-9 rounded-xl bg-white border border-green-100 flex items-center justify-center text-lg flex-shrink-0">🏠</div>
+          <div class="flex-1">
+            <p class="text-sm font-semibold text-gray-800">Home Delivery</p>
+            <p class="text-xs text-gray-400">2–4 business days</p>
+          </div>
+        </div>
+ 
+        <div  class="method-card flex items-center gap-3 border-2 border-gray-200 rounded-xl p-3.5 cursor-pointer hover:border-green-200 hover:bg-green-50/30 transition-all">
+          <div class="radio w-4 h-4 rounded-full border-2 border-gray-300 flex items-center justify-center flex-shrink-0"></div>
+          <div class="w-9 h-9 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-lg flex-shrink-0">📦</div>
+          <div class="flex-1">
+            <p class="text-sm font-semibold text-gray-800">Pickup Point</p>
+            <p class="text-xs text-gray-400">Collect from nearest point</p>
+          </div>
+        </div>
+ 
+       
+ 
+      </div>
+    </div>
+ 
+    <div class="p-5">
+      <label class="block text-[11px] font-semibold text-gray-400 uppercase tracking-widest mb-2">
+        Order Notes
+      </label>
+      <textarea  rows="3" placeholder=" You can leave a note for the seller here...."
+        class="w-full border    border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 focus:border-green-500 focus:ring-2 focus:ring-green-100 transition-all placeholder-gray-300 resize-none"></textarea>
+    </div>
+ 
+    <div class="p-5">
+      <div class="bg-red-50 border border-red-100 rounded-xl px-4 py-4 flex items-start justify-between gap-3">
+        <div>
+          <p class="text-sm font-semibold text-red-700">Cancel Order</p>
+          <p class="text-xs text-red-400 mt-1 leading-relaxed">Only available before shipment.<br/>This action cannot be undone.</p>
+        </div>
+        <button 
+          class="flex-shrink-0 border border-red-300 text-red-600 hover:bg-red-100 text-xs font-semibold px-4 py-2 rounded-xl transition-all mt-1">
+          Cancel Order
+        </button>
+      </div>
+    </div>
+ 
+    <div class="p-5 flex gap-3">
+      <button onclick="closeit('editorder')"
+        class="flex-1 border border-gray-200 text-gray-500 hover:bg-gray-50 text-sm font-semibold py-3 rounded-xl transition-all">
+         Back
+      </button>
+      <button 
+        class="flex-1 bg-green-600 hover:bg-green-500 active:scale-95 text-white text-sm font-semibold py-3 rounded-xl transition-all shadow-sm flex items-center justify-center gap-2">
+      
+        Save Changes
+      </button>
+    </div>
+ 
+  </div>
+</div>
+ </div>
+</div>
+
+
+
+<script src="panel.js"></script>
+</body>
+</html>

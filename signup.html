@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGRITRADE </title>
+    <title>Register</title>
       <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -14,21 +14,34 @@
         <div class="text-center text-2xl font-bold "> <h1>Register </h1> </div> <div class="text-center "><span class="text-base "> please Fill Your informations to Continue </span></div> <br>
     
     
-    <form action="signup.html">
+    <form action="register_process.php" method="POST">
         <div class=" flex flex-col gap-1 w-auto ml-2 font-normal">
        Name <input class="  border-b-2  focus:outline-none border-black  placeholder:text-sm placeholder:hover:text-xs placeholder:p-2  "  type="text" name="name" placeholder="Enter Your name"  > 
        Last Name<input class="  border-b-2  focus:outline-none border-black  placeholder:text-sm placeholder:hover:text-xs placeholder:p-2  "  type="text" name="lastname" placeholder="Enter Your lastname" > 
        Email<input class="  border-b-2  focus:outline-none border-black  placeholder:text-sm placeholder:hover:text-xs placeholder:p-2  "  type="email" name="email" placeholder="Enter Your Email"  > <i class="fa-solid fa-envelope relative left-80 bottom-7"></i> 
        Username<input class="  border-b-2  focus:outline-none border-black  placeholder:text-sm placeholder:hover:text-xs placeholder:p-2  "  type="text" name="username" placeholder="Enter Your username"  > <i class="fa-solid fa-user relative left-80 bottom-7"></i> 
        Password <input class="border-b-2 focus:outline-none border-black placeholder:text-sm  placeholder:hover:text-xs placeholder:p-2  " type="password"placeholder=" Enter Your password" > <i class="fa-solid fa-lock relative left-80 bottom-7 "></i> 
-<select name="Register as a " id="reg" > 
-<option value="text">Buyer </option>
-<option value="text">Seller</option> 
-</select>
+
 </div>
        <input type="checkbox"> I agree on terms & conditions <br><br>
-<div class= "bg-gray-900  text-slate-200 text-center rounded-md p-1.5 w-44  relative left-20 hover:bg-gray-800"  <button> Register </button> </form></div>
+<div class="bg-gray-900 text-slate-200 text-center rounded-md p-1.5 w-44 relative left-20 hover:bg-gray-800"><button type="submit">Register</button></form></div>
 <div class="text-center"><label  for=""> already have an account?<a href="login.html"> <span class="underline font-normal">login </span></a></label>  </div>
 </div></div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var cb = document.querySelector('input[type="checkbox"]');
+    var btn = document.querySelector('button[type="submit"]');
+    if (cb && btn) {
+        btn.disabled = true;
+        btn.style.opacity = '0.5';
+        btn.style.cursor = 'not-allowed';
+        cb.addEventListener('change', function() {
+            btn.disabled = !cb.checked;
+            btn.style.opacity = cb.checked ? '1' : '0.5';
+            btn.style.cursor = cb.checked ? 'pointer' : 'not-allowed';
+        });
+    }
+});
+</script>
 </body>
 </html>
